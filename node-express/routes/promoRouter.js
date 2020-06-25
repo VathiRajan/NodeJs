@@ -52,7 +52,7 @@ promoRouter.route('/:promoId')
     .put((req, res, next) => {
         res.statusCode = 200;
         res.end('updating the promotion : ' + req.params.promoId + '\n' +
-            'Will update the promotion ' + req.params.promoId + ' details' + + req.params.description);
+            'Will update the promotion ' + req.params.name + ' details' + req.params.description);
     })
 
     .delete((req, res, next) => {

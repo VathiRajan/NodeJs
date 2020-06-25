@@ -52,7 +52,7 @@ leaderRouter.route('/:leaderId')
     .put((req, res, next) => {
         res.statusCode = 200;
         res.end('updating the leaders : ' + req.params.leaderId + '\n' +
-            'Will update the leader ' + req.params.leaderId + ' details' + + req.params.description);
+            'Will update the leader ' + req.params.name + ' details' + req.params.description);
     })
 
     .delete((req, res, next) => {
