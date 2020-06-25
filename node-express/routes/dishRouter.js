@@ -35,29 +35,27 @@ dishRouter.route('/')
     })//There is no semicolon as all end points enclosed in single router
 
     .delete((req, res, next) => {
-        res.statusCode = 200;
         res.end('Deleting all dishes');
     });
 
 
 dishRouter.route('/:dishId')
     .get((req, res, next) => {
-        res.end('Get resquest end point');
+        res.end('Will send the details of dish : ' + req.params.dishId);
     })
 
     .post((req, res, next) => {
         res.statusCode = 403;
-        res.end('POST operation not supported on /dishes/:Id');
+        res.end('POST operation not supported on /dishes/' + req.params.dishId);
     })
 
     .put((req, res, next) => {
         res.statusCode = 200;
-        res.write('updating the dish : ' + req.params.dishId);
+        res.write('Will send the details of dish : ' + req.params.dishId);
     })
 
     .delete((req, res, next) => {
-        res.statusCode = 200;
-        res.end('Deleting all dishes');
+        res.end('Deleting a  dish: ' + req.params.dishId);
     });
 
 module.exports = dishRouter;

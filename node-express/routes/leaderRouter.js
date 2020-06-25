@@ -18,45 +18,44 @@ leaderRouter.route('/')
     }) //There is no semicolon as all end points enclosed in single router
 
     .get((req, res, next) => {
-        res.end('Get resquest end point');
+        res.end('Get all the leaders');
 
     })//There is no semicolon as all end points enclosed in single router
 
     .post((req, res, next) => {
-        res.end('Post method - dish name' + req.body.name +
-            ' body description ' + req.body.description);
+        res.end('Post method - leader name' + req.body.name +
+            ' leader description ' + req.body.description);
 
     })//There is no semicolon as all end points enclosed in single router
 
     .put((req, res, next) => {
         res.statusCode = 403;
-        res.end('PUT operation not supported on /dishes');
+        res.end('PUT operation not supported on /leaders');
 
     })//There is no semicolon as all end points enclosed in single router
 
     .delete((req, res, next) => {
-        res.statusCode = 200;
-        res.end('Deleting all dishes');
+        res.end('Deleting all leaders');
     });
 
 
 leaderRouter.route('/:leaderId')
     .get((req, res, next) => {
-        res.end('Get resquest end point');
+        res.end('Getting all the leaders for the leader id ' + req.params.leaderId);
     })
 
     .post((req, res, next) => {
         res.statusCode = 403;
-        res.end('POST operation not supported on /leader/:Id');
+        res.end('POST operation not supported on /leader/:' + req.params.leaderId);
     })
 
     .put((req, res, next) => {
         res.statusCode = 200;
-        res.write('updating the dish : ' + req.params.leaderId);
+        res.write('updating the leaders : ' + req.params.leaderId + '\n' +
+            'Will update the leader ' + req.params.leaderId + ' details' + + req.params.description);
     })
 
     .delete((req, res, next) => {
-        res.statusCode = 200;
-        res.end('Deleting all dishes');
+        res.end('Deleting the leader ' + req.params.leaderId);
     });
 module.exports = leaderRouter;

@@ -18,25 +18,24 @@ promoRouter.route('/')
     }) //There is no semicolon as all end points enclosed in single router
 
     .get((req, res, next) => {
-        res.end('Get resquest end point');
+        res.end('Will send all the promotions to you');
 
     })//There is no semicolon as all end points enclosed in single router
 
     .post((req, res, next) => {
-        res.end('Post method - dish name' + req.body.name +
-            ' body description ' + req.body.description);
+        res.end('Will add the promotion: promoion name: ' + req.body.name +
+            ' promotion detail : ' + req.body.description);
 
     })//There is no semicolon as all end points enclosed in single router
 
     .put((req, res, next) => {
         res.statusCode = 403;
-        res.end('PUT operation not supported on /dishes');
+        res.end('PUT operation not supported on /promotions');
 
     })//There is no semicolon as all end points enclosed in single router
 
     .delete((req, res, next) => {
-        res.statusCode = 200;
-        res.end('Deleting all dishes');
+        res.end('Deleting all prmotions');
     });
 
 
@@ -47,16 +46,16 @@ promoRouter.route('/:promoId')
 
     .post((req, res, next) => {
         res.statusCode = 403;
-        res.end('POST operation not supported on /promo/:Id');
+        res.end('POST operation not supported on /promotions/' + req.params.promoId);
     })
 
     .put((req, res, next) => {
         res.statusCode = 200;
-        res.write('updating the dish : ' + req.params.promoId);
+        res.write('updating the promotion : ' + req.params.promoId + '\n' +
+            'Will update the promotion ' + req.params.promoId + ' details' + + req.params.description);
     })
 
     .delete((req, res, next) => {
-        res.statusCode = 200;
-        res.end('Deleting all dishes');
+        res.end('Deleting the promotion ' + + req.params.promoId);
     });
 module.exports = promoRouter;

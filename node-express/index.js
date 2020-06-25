@@ -6,6 +6,10 @@ const hostname = 'localhost'
 const port = 3000;
 const app = express();
 const dishRouter = require('./routes/dishRouter');
+const leaderRouter = require('./routes/leaderRouter');
+const promoRouter = require('./routes/promoRouter');
+
+
 //app.use() - to include all the middle wares
 
 //app.all() - to define common response  too all end points.
@@ -24,6 +28,9 @@ app.use(bodyParser.json());
 
 //Mounting the Router
 app.use('/dishes', dishRouter);
+app.use('/promotions', promoRouter);
+app.use('/leader', leaderRouter);
+
 
 
 /*
