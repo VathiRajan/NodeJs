@@ -29,11 +29,11 @@ app.use(bodyParser.json());
 //Mounting the Router
 app.use('/dishes', dishRouter);
 app.use('/promotions', promoRouter);
-app.use('/leader', leaderRouter);
+app.use('/leaders', leaderRouter);
 
 
 
-/*
+/*      
 
 // Has been moved to Router
 

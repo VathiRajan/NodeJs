@@ -41,7 +41,7 @@ promoRouter.route('/')
 
 promoRouter.route('/:promoId')
     .get((req, res, next) => {
-        res.end('Get resquest end point');
+        res.end('Geting the promotions for the id : ' + req.params.promoId);
     })
 
     .post((req, res, next) => {
@@ -51,7 +51,7 @@ promoRouter.route('/:promoId')
 
     .put((req, res, next) => {
         res.statusCode = 200;
-        res.write('updating the promotion : ' + req.params.promoId + '\n' +
+        res.end('updating the promotion : ' + req.params.promoId + '\n' +
             'Will update the promotion ' + req.params.promoId + ' details' + + req.params.description);
     })
 

@@ -51,7 +51,7 @@ dishRouter.route('/:dishId')
 
     .put((req, res, next) => {
         res.statusCode = 200;
-        res.write('Will send the details of dish : ' + req.params.dishId);
+        res.end('Will send the details of dish : ' + req.params.dishId);
     })
 
     .delete((req, res, next) => {

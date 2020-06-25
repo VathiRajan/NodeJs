@@ -51,7 +51,7 @@ leaderRouter.route('/:leaderId')
 
     .put((req, res, next) => {
         res.statusCode = 200;
-        res.write('updating the leaders : ' + req.params.leaderId + '\n' +
+        res.end('updating the leaders : ' + req.params.leaderId + '\n' +
             'Will update the leader ' + req.params.leaderId + ' details' + + req.params.description);
     })
 
