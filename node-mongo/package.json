@@ -12,5 +12,8 @@
   "dependencies": {
     "assert": "^2.0.0",
     "mongo-db": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1"
   }
 }
